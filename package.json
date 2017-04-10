@@ -1,0 +1,11 @@
+{
+  "name": "morgan",
+  "version": "6.10.2",
+  "description": "",
+  "main": "main: index.js",
+  "scripts": {
+  "test": "start: node index.js"
+  },
+  "author": "morgan",
+  "license": "ISC"
+}
