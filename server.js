@@ -49,7 +49,8 @@ http.createServer((req,res) => {
                 res.writeHead(200,{
                     'Content-Type': 'text/plain'
                 });
-                res.end('This book has been deleted from our records! There are now 6 titles left');
+                let result = book.delete(params.title);
+                res.end('This book has been deleted from our records! There are now ' + result + ' titles left');
                 break;
                 
         default:
