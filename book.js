@@ -31,7 +31,7 @@ exports.get = (title)  => {
 };
 
 exports.delete = (title) => {
-    console.log(books);
+    //console.log(title);
     let newBooks = books.filter((item) => {
         return item.title !== title;
     });

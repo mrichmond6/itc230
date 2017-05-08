@@ -1,5 +1,5 @@
-var book = require('./public/views/book.js');
-
+var book = require('./book.js');
+/*console.log(book.get("Harry"));)*/
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -40,15 +40,18 @@ app.get('/about', function(req, res){
 
 //handle post
 app.post('/search', function(req,res){
-    console.log(req.body)
+    //console.log(req.body)
     var header = 'Searching for: ' + req.body.title + '<br>';
+	//console.log(req.body.title);
     var found = book.get(req.body.title);
+	//console.log(found);
     res.render('details', {title: req.body.title, result: found});
 });
 
 
 //handle get
-app.get('/delete', function(req, res){
+app.post('/delete', function(req, res){
+	console.log(req.query);
     let result = book.delete(req.query.title); //delete the book object
     res.render('delete',{
         title: req.query.title, result: result
