@@ -31,7 +31,6 @@ exports.get = (title)  => {
 };
 
 exports.delete = (title) => {
-    //console.log(title);
 	let oldLength = books.length;
     let newBooks = books.filter((item) => {
         return item.title !== title;
