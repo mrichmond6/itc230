@@ -30,12 +30,16 @@ exports.get = (title)  => {
     });
 };
 
+
+exports.getAll = () => {
+	return books;
+}
+
 exports.delete = (title) => {
 	let oldLength = books.length;
     let newBooks = books.filter((item) => {
         return item.title !== title;
     });
-	
     books = newBooks;
 	return {deleted: oldLength != books.length , total: books.length }
 };

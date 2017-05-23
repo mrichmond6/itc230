@@ -1,10 +1,15 @@
 {{#if result}}
-<h1>Book Details: {{title}} </h1>
+<h1>Book Details:<br>
+	The title is {{title}}
+	<br>
+	The author is {{result.author}}
+</h1>
 
     <form name="deleteBook" action="/delete?title={{result.title}}" method="POST">
         <h2>Would you like to delete this book?</h2>
         <input type="submit" value="delete"/>
  </form>
 {{else}}
-<h2>{{title}} not found</h2>
+<h2>{{title}} was not found.</h2>
+
 {{/if}}

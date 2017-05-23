@@ -29,7 +29,7 @@ app.set('view engine', 'hbs');
 ////ROUTES////
 app.get('/', function(req, res){
     res.setHeader('Content-Type','text/html');
-    res.render('home', {title: 'Main'});
+    res.render('home', {title: 'Main', books: book.getAll()});
 });
 
 ////send a plain text response for ABOUT ////
@@ -37,12 +37,13 @@ app.get('/about', function(req, res){
     res.type('text/html');
     res.render('About');
 });
-
 //handle post
+app.get('/search', function(req,res){
+	var found = book.get(req.query.title);
+	res.render('details', {title: req.query.title, result: found});
+});
+
 app.post('/search', function(req,res){
-    //console.log(req.body)
-    var header = 'Searching for: ' + req.body.title + '<br>';
-	//console.log(req.body.title);
     var found = book.get(req.body.title);
 	//console.log(found);
     res.render('details', {title: req.body.title, result: found});

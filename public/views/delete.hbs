@@ -1,1 +1,6 @@
-<h1>This title has been deleted! There are now {{result}} records left</h1>
+{{#if result.deleted}}
+<h1>{{title}} has been deleted! There are now {{result.total}} records left</h1>
+
+{{else}}
+<h2>{{title}} not found</h2>
+{{/if}}
