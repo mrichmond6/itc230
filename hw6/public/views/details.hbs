@@ -1,0 +1,14 @@
+{{#if result}}
+<h1>Book Details:<br>
+	The title is {{result.title}}
+	<br>
+	The author is {{result.author}}
+</h1>
+
+<a href="/delete?title={{result.title}}">Delete this title</a>
+        <h2>Would you like to delete this book?</h2>
+ </form>
+{{else}}
+<h2>{{title}} was not found.</h2>
+
+{{/if}}
