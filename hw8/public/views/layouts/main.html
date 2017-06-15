@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Book Store</title>
+   	<style>
+			html {
+				background-color: gainsboro;
+				margin: 0;
+				padding: 0;
+				font-family: Calibri;
+			}
+			body {
+				width: 970px;
+				margin: 2em auto;
+				background-color: white;
+				padding: 1em;
+			}
+			form {
+				margin: 1.5em;
+			}
+			h1 {
+				display: block;
+			}
+			p {
+				font-size: 1.5em;
+			}
+			ul li{
+			display: inline-block;
+			}
+		</style>
+</head>
+<body>
+	
+    <div class="nav">
+		
+    {{#if books}}{{else}}<a href="/">Home</a> |{{/if}}
+    <a href="/about">About</a></div>
+	
+    <header>Books</header>
+    <hr>
+    {{{body}}}
+    <hr>
+</body>
+</html>
